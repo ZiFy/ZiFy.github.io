@@ -14,16 +14,16 @@ before_script:
 
 script:
   - hexo g
-  - hexo d
+  # - hexo d
 
-# after_script:
-#   - cd ./public
-#   - git init
-#   - git config user.name "zify"
-#   - git config user.email "zhaol2014@foxmail.com"
-#   - git add .
-#   - git commit -m "Update docs"
-#   - git push --force --quiet "https://access_token@${GH_REF}" master:master
+after_script:
+  - cd ./public
+  - git init
+  - git config user.name "zify"
+  - git config user.email "zhaol2014@foxmail.com"
+  - git add .
+  - git commit -m "Update docs"
+  - git push --force --quiet "https://access_token@${GH_REF}" master:master
 # E: Build LifeCycle
 
 branches:
