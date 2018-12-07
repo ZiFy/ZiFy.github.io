@@ -1,5 +1,8 @@
 ---
 title: Jenkens CI iOS Project
+date: 2018-12-07 18:01:35
+tags: [Jenkens, iOS]
+categories: [Jenkens]
 ---
 # Jenkens CI iOS Project
 test package

@@ -1,5 +1,8 @@
 ---
 title: sonarQube 分析Objective-C
+date: 2018-12-03 18:01:35
+tags: [sonarQube, Objective-C]
+categories: [iOS]
 ---
 # sonarQube 分析Objective-C
 ## 安装

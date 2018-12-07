@@ -1,5 +1,8 @@
 ---
 title: use rn by Cocoapods
+date: 2018-12-02 18:01:35
+tags: [Cocoapods, ReactNative]
+categories: [iOS]
 ---
 # use rn by Cocoapods
 

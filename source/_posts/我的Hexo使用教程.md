@@ -1,5 +1,8 @@
 ---
 title: 我的Hexo使用教程
+date: 2018-12-04 18:01:35
+tags: [Hexo]
+categories: [Hexo]
 ---
 使用Hexo搭建博客
 
@@ -95,7 +98,7 @@ theme: 主题key
 landscape: 对应themes目录下的文件夹名
 
 
-## 使用travis 自动部署
+## 使用travis CI自动部署
 
 
 

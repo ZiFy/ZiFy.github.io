@@ -1,7 +1,7 @@
 ---
 title: 程序员装逼指南之Blog
-tags: [centOS, tomcat]
-categories: [hexo]
+tags: [Hexo]
+categories: [Hexo]
 author: Zify
 comments: true
 date: 2018-12-05 15:19:00
