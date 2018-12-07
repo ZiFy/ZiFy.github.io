@@ -1,0 +1,120 @@
+---
+title: travis CI自动部署Hexo
+date: 2018-12-07 17:03:08
+tags: [travis CI, Hexo]
+---
+
+# 简介
+
+前面已经介绍了如何使用Hexo配合github page搭建自己的blog。
+你会发现每次需要发布一篇新的文章至少需要两步：
+
+- 提交代码到hexo源码库
+- 发布到github.io仓库
+
+虽然已经很简单了，但是还有没有办法减少工作量?
+答案是：有！就是今天要讲的。
+
+解决的问题是：完成第一步：提交代码到hexo源码库，利用持续集成构建工具自动发布。
+
+## 持续集成：continue Integration.
+有工具：jenkins， travis CI等
+
+
+## travis CI
+travis CI的优缺点就不用讲了，主要是github和它配合起来，很容易。
+参考下面2位先驱的文章基本可以搞定，但年代有点久了，travis CI也已经更新了，我就罗列下我遇到的问题。
+
+[基于Travis CI实现 Hexo 在 Github 和 Coding 的同步部署](https://blog.csdn.net/qinyuanpei/article/details/79388983)
+
+[手把手教你使用Travis CI自动部署你的Hexo博客到Github上](https://blog.csdn.net/woblog/article/details/51319364)
+
+### 1.登录travis-ci
+
+使用github账号登录[https://www.travis-ci.org/](https://www.travis-ci.org/)
+
+我发现还有这个网站[https://travis-ci.com/](https://travis-ci.com/)有兴趣的可以试试
+
+### 2.选择你的项目设置
+
+![travis-ci-setting-open.png](travis-ci-setting-open.png)
+
+前往[https://github.com/settings/tokens/new](https://github.com/settings/tokens/new)生成一个Personal access token
+
+![new-personal-access-token.png](new-personal-access-token.png)
+
+![person-access-token.png](person-access-token.png)
+请记住这个token，退出这个页面就没了，下个页面要用
+
+![travis-ci-setting-token.png](travis-ci-setting-token.png)
+
+token_name随便起一个，value用刚刚生成的token，然后点击add按钮.
+
+这个token_name会在.travis.yml脚本中用到
+
+### 2.设置脚本.travis.yml
+在你的源代码分支下面添加.travis.yml
+
+```
+language: node_js
+node_js: stable
+
+# S: Build Lifecycle
+install:
+  - npm install
+
+
+#before_script:
+ # - npm install -g gulp
+before_script:
+  - git submodule add https://github.com/ZiFy/hexo-theme-next.git themes/next
+  - git submodule update --init --recursive
+
+script:
+  - hexo g
+  # - hexo d
+# hexo d 使用这个脚本回报错误，主要是提交代码用户权限问题。所以有了下面after_script
+
+after_script:
+  - cd ./public
+  - git init
+  - git config user.name "zify"
+  - git config user.email "zhaol2014@foxmail.com"
+  - git add .
+  - git commit -m "Update docs"
+  - git push --force --quiet "https://${access_token}@${GH_REF}" master:master
+# E: Build LifeCycle
+
+branches:
+  only:
+    - develop
+env:
+ global:
+   - GH_REF: github.com/ZiFy/ZiFy.github.io.git
+
+```
+- access_token: 在网站配置页面添加的环境变量
+- GH_REF: hexo源代码仓库
+- develop: 是要执行命令的分支
+
+### 提交.travis.yml
+每一次提交，都会出发travis的任务检查，检查通过，则会执行任务。
+
+#### travis原理
+
+1. 监听commint提交
+2. 检查是否包含.travis.yml
+3. 检查.travis.yml的语法
+4. 执行任务
+
+### 执行任务。
+
+![travis-ci-branch.png](travis-ci-branch.png)
+
+## 最后
+时间：2018-12-7
+Hexo：3.8
+
+
+
+
