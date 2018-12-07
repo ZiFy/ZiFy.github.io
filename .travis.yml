@@ -8,6 +8,11 @@ install:
 
 #before_script:
  # - npm install -g gulp
+before_script:
+  - git submodule
+  - git submodule init
+  - git submodule update
+  - git submodule
 
 script:
   - hexo g
