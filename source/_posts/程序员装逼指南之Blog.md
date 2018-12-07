@@ -128,5 +128,45 @@ hexo server -d
 open http://localhost:4000/admin/
 ```
 
-### SEO优化
+## SEO优化
 [Hexo博客Next主题SEO优化方法](https://hoxis.github.io/Hexo+Next%20SEO%E4%BC%98%E5%8C%96.html)
+
+
+## Hexo博客压缩优化
+Hexo博客生成的静态文件存在大量空白，不仅难看，而且在一定程度上影响用户网页加载，需要对js和css进行压缩。
+
+### 安装插件
+
+```
+$ npm install hexo-neat --save
+
+
+```
+
+### 配置
+在站点配置增加如下属性，可以选择是否压缩HTML、CSS、Js文件，均有相应的开关选项。
+
+
+```
+# hexo-neat
+
+neat_enable: true
+
+neat_html:
+  enable: true
+  exclude:
+
+neat_css:
+  enable: true
+  exclude:
+    - '*.min.css'
+
+neat_js:
+  enable: true
+  mangle: true
+  output:
+  compress:
+  exclude:
+    - '*.min.js'
+    
+```
