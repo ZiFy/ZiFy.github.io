@@ -9,10 +9,8 @@ install:
 #before_script:
  # - npm install -g gulp
 before_script:
-  - git submodule
-  - git submodule init
-  - git submodule update
-  - git submodule
+  - git submodule add https://github.com/ZiFy/hexo-theme-next.git themes/next
+  - git submodule update --init --recursive
 
 script:
   - hexo g
