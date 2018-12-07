@@ -25,7 +25,7 @@ script:
 
 branches:
   only:
-    - blog-resource
+    - develop
 env:
  global:
-   - GH_REF: github.com/gl09025/hexo-blog.git
+   - GH_REF: github.com/ZiFy/ZiFy.github.io.git
