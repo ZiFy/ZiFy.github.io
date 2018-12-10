@@ -7,6 +7,7 @@ categories: [Hexo]
 
 > 本文整理了使用的Hexo-Next主题的实用自定义样式。
 
+<!-- more -->
 # github banner
 
 [http://tholman.com/github-corners/](http://tholman.com/github-corners/)

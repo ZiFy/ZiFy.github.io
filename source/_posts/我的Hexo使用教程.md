@@ -6,6 +6,9 @@ categories: [Hexo]
 ---
 使用Hexo搭建博客
 
+
+<!-- more -->
+
 ## Quick Start
 
 ### Create a new post

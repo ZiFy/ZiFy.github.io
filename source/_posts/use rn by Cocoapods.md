@@ -4,6 +4,9 @@ date: 2018-12-02 18:01:35
 tags: [Cocoapods, ReactNative]
 categories: [iOS]
 ---
+
+<!-- more -->
+
 # use rn by Cocoapods
 
 配置信息

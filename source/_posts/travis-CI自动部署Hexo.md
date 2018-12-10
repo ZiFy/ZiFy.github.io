@@ -4,6 +4,9 @@ date: 2018-12-07 17:03:08
 tags: [travis CI, Hexo]
 ---
 
+> 本文基于travis CI自动部署Hexo到github page
+
+<!-- more -->
 # 简介
 
 前面已经介绍了如何使用Hexo配合github page搭建自己的blog。
