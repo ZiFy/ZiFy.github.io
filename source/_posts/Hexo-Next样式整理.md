@@ -5,11 +5,17 @@ tags: [Hexo]
 categories: [Hexo]
 ---
 
+> 本文整理了使用的Hexo-Next主题的实用自定义样式。
 
 # github banner
 
 [http://tholman.com/github-corners/](http://tholman.com/github-corners/)
 
+选择你喜欢的样式，然后找到, /themes/next/layout/_third-party/github-banner.swig, 替换里面的svg就可以了。
+
+![next-github-banner-style.png](next-github-banner-style.png)
+
+如果只是颜色修改，找到 /themes/next/_config.yml:android_chrome_color 直接改就好了
 
 # 鼠标点击特性
 [https://blog.csdn.net/qq_33699981/article/details/72716951](https://blog.csdn.net/qq_33699981/article/details/72716951)
