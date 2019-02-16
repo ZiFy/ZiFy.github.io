@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Zify&#39;s Blog</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://zify.github.io/"/>
+  <updated>2019-02-16T03:31:58.092Z</updated>
+  <id>https://zify.github.io/</id>
+  
+  <author>
+    <name>Zify</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>12.自定义Carthage私库</title>
+    <link href="https://zify.github.io/2019/02/16/12-%E8%87%AA%E5%AE%9A%E4%B9%89Carthage%E7%A7%81%E5%BA%93/"/>
+    <id>https://zify.github.io/2019/02/16/12-自定义Carthage私库/</id>
+    <published>2019-02-16T03:17:41.000Z</published>
+    <updated>2019-02-16T03:31:58.092Z</updated>
+    
+    <content type="html"><![CDATA[<!-- build time:Sat Feb 16 2019 15:09:23 GMT+0800 (GMT+08:00) --><blockquote><p>本文介绍如何创建一个自己的Carthage仓库</p></blockquote><a id="more"></a><p>与cocoapods不同的地方是, Carthage最后使用的是framework，所依赖的仓库根目录下面必须存在一个xcode framework工程。</p><h3 id="1-创建一个framework工程"><a href="#1-创建一个framework工程" class="headerlink" title="1.创建一个framework工程"></a>1.创建一个framework工程</h3><h3 id="2-这个工程依赖的其他工程"><a href="#2-这个工程依赖的其他工程" class="headerlink" title="2.这个工程依赖的其他工程"></a>2.这个工程依赖的其他工程</h3><p>所以依赖的工程，必须直接或者间接的存在framework。</p><ul><li>直接依赖framework</li><li>存在framework工程(包括：是一个Carthage私库)</li></ul><!-- rebuild by neat -->]]></content>
+    
+    <summary type="html">
+    
+      &lt;!-- build time:Sat Feb 16 2019 15:09:23 GMT+0800 (GMT+08:00) --&gt;&lt;blockquote&gt;&lt;p&gt;本文介绍如何创建一个自己的Carthage仓库&lt;/p&gt;&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+      <category term="Carthage" scheme="https://zify.github.io/tags/Carthage/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>11.Carthage的使用及注意</title>
+    <link href="https://zify.github.io/2019/02/16/11.Carthage%E7%9A%84%E4%BD%BF%E7%94%A8%E5%8F%8A%E6%B3%A8%E6%84%8F/"/>
+    <id>https://zify.github.io/2019/02/16/11.Carthage的使用及注意/</id>
+    <published>2019-02-16T02:05:57.000Z</published>
+    <updated>2019-02-16T03:48:03.543Z</updated>
+    
+    <content type="html"><![CDATA[<!-- build time:Sat Feb 16 2019 15:09:23 GMT+0800 (GMT+08:00) --><p>###安装Carthage:</p><p>推荐使用HomeBrew进行安装</p><p><code>$ brew install carthage</code></p><p>###使用Carthage</p><p>1.先进入到项目.xcodeproj所在文件夹</p><p><code>$ cd 项目路径</code></p><p>2.创建一个空的Carthage文件</p><p><code>$ touch Cartfile</code></p><p>3.编辑cartfile文件，添加依赖框架</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">github &quot;Alamofire/AlamofireImage&quot;</span><br><span class="line">github &quot;https://github.com/AFNetworking/AFNetworking&quot;</span><br><span class="line">git &quot;xxx&quot;</span><br></pre></td></tr></table></figure><p>4.保存并关闭cartfile文件，进行安装</p><p><code>$ carthage update --no-use-binaries --platform ios</code></p><h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><h3 id="多个Xcode"><a href="#多个Xcode" class="headerlink" title="多个Xcode"></a>多个Xcode</h3><p>多个 Xcode 版本用 DEVELOPER_DIR 指定就行</p><h3 id="在编码时看第三方源码"><a href="#在编码时看第三方源码" class="headerlink" title="在编码时看第三方源码"></a>在编码时看第三方源码</h3><p>加 Carthage update –configuration Debug</p><hr><p>引用：</p><ul><li><a href="https://github.com/Carthage/Carthage/blob/master/README.md" target="_blank" rel="noopener">Carthage官方使用教程</a></li><li><a href="https://github.com/Carthage/Carthage/blob/master/Documentation/Artifacts.md#cartfile" target="_blank" rel="noopener">Cartfile官方说明</a></li><li><a href="https://www.jianshu.com/p/7a0634e14332" target="_blank" rel="noopener">Carthage的用法及注意事项</a></li></ul><!-- rebuild by neat -->]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;!-- build time:Sat Feb 16 2019 15:09:23 GMT+0800 (GMT+08:00) --&gt;&lt;p&gt;###安装Carthage:&lt;/p&gt;&lt;p&gt;推荐使用HomeBrew进行安装&lt;/p&gt;&lt;p&gt;&lt;code&gt;$ brew install carthag
+      
+    
+    </summary>
+    
+    
+      <category term="Carthage" scheme="https://zify.github.io/tags/Carthage/"/>
+    
+      <category term="iOS" scheme="https://zify.github.io/tags/iOS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>10.Cocoapods项目中使用Carthage</title>
+    <link href="https://zify.github.io/2019/02/16/10.Cocoapods%E9%A1%B9%E7%9B%AE%E4%B8%AD%E4%BD%BF%E7%94%A8Carthage/"/>
+    <id>https://zify.github.io/2019/02/16/10.Cocoapods项目中使用Carthage/</id>
+    <published>2019-02-16T02:02:17.000Z</published>
+    <updated>2019-02-16T03:47:10.932Z</updated>
+    
+    <content type="html"><![CDATA[<!-- build time:Sat Feb 16 2019 15:09:23 GMT+0800 (GMT+08:00) --><blockquote><p>本文介绍了在一个成功使用cocoapods项目中，引入Carthage<br><a id="more"></a></p></blockquote><h3 id="1-使用Carthage引入一个只是主工程依赖的repo"><a href="#1-使用Carthage引入一个只是主工程依赖的repo" class="headerlink" title="1.使用Carthage引入一个只是主工程依赖的repo"></a>1.使用Carthage引入一个只是主工程依赖的repo</h3><p>这是最简单的情况，按照Carthage的基本使用方式即可</p><h3 id="2-Carthage多层嵌套的依赖"><a href="#2-Carthage多层嵌套的依赖" class="headerlink" title="2.Carthage多层嵌套的依赖"></a>2.Carthage多层嵌套的依赖</h3><p>即repo1依赖repo2</p><ul><li>repo1下面的Cartfile中引用repo2</li></ul><h3 id="3-cocoapods依赖Carthage导入的库"><a href="#3-cocoapods依赖Carthage导入的库" class="headerlink" title="3.cocoapods依赖Carthage导入的库"></a>3.cocoapods依赖Carthage导入的库</h3><p>理论上不可行，cocoapods的spec里面会依赖库，会重复引用。</p><h3 id="4-Carthage依赖cocoapods导入的库"><a href="#4-Carthage依赖cocoapods导入的库" class="headerlink" title="4.Carthage依赖cocoapods导入的库"></a>4.Carthage依赖cocoapods导入的库</h3><p>理论上不可行，cocoapods的spec里面会依赖库，会重复引用。</p><h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2><ul><li><a href="https://zongren.me/2016/12/12/carthage-with-nested-dependencies/#fn:1" target="_blank" rel="noopener">如何使用Carthage解决嵌套的库依赖</a></li></ul><!-- rebuild by neat -->]]></content>
+    
+    <summary type="html">
+    
+      &lt;!-- build time:Sat Feb 16 2019 15:09:23 GMT+0800 (GMT+08:00) --&gt;&lt;blockquote&gt;&lt;p&gt;本文介绍了在一个成功使用cocoapods项目中，引入Carthage&lt;br&gt;&lt;/p&gt;&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>9.Fastlane打包iOS常见问题</title>
+    <link href="https://zify.github.io/2019/01/25/9.Fastlane%E6%89%93%E5%8C%85iOS%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/"/>
+    <id>https://zify.github.io/2019/01/25/9.Fastlane打包iOS常见问题/</id>
+    <published>2019-01-25T02:27:44.000Z</published>
+    <updated>2019-02-16T02:36:59.434Z</updated>
+    
+    <content type="html"><![CDATA[<!-- build time:Sat Feb 16 2019 15:09:23 GMT+0800 (GMT+08:00) --><h1 id="1-打包"><a href="#1-打包" class="headerlink" title="1.打包"></a>1.打包</h1><p>在iOS工程根目录下有个fastlane文件夹，注意 Appfile、 Fastfile、Matchfile</p><p><img src="/2019/01/25/9.Fastlane打包iOS常见问题/目录结构.png" alt=""></p><ul><li>Appfile :App信息</li><li>Fastfile :脚本命令</li><li>Matchfile :Match配置</li></ul><h1 id="2-常见问题-证书"><a href="#2-常见问题-证书" class="headerlink" title="2.常见问题-证书"></a>2.常见问题-证书</h1><h2 id="证书不存在"><a href="#证书不存在" class="headerlink" title="证书不存在"></a>证书不存在</h2><p>操作步骤：</p><ol><li>fastlane match nuke ：移除失效证书</li><li>fastlane match development ：注册证书</li></ol><h1 id="3-常见问题-二次认证"><a href="#3-常见问题-二次认证" class="headerlink" title="3.常见问题-二次认证"></a>3.常见问题-二次认证</h1><p>appleid开启二次认证后，需要每次都输入6位验证码</p><p>通过配置</p><ul><li>FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD</li><li>FASTLANE_PASSWORD</li><li>MATCH_PASSWORD</li><li>FASTLANE_SESSION</li></ul><h2 id="session失效"><a href="#session失效" class="headerlink" title="session失效"></a>session失效</h2><p>fastlane spaceauth -u <a href="mailto:your@appid.com" target="_blank" rel="noopener">your@appid.com</a> 重新生成</p><h1 id="4-常见问题-latest-testflight-build-number"><a href="#4-常见问题-latest-testflight-build-number" class="headerlink" title="4.常见问题-latest_testflight_build_number"></a>4.常见问题-latest_testflight_build_number</h1><h3 id="问题描述："><a href="#问题描述：" class="headerlink" title="问题描述："></a>问题描述：</h3><p><img src="/2019/01/25/9.Fastlane打包iOS常见问题/latest_testflight_build_number.png" alt=""></p><h3 id="问题原因分析"><a href="#问题原因分析" class="headerlink" title="问题原因分析:"></a>问题原因分析:</h3><p>一个未发布的app，没有发一个ipa到appstoreconnect的时候，latest_testflight_build_number命令找不到一个版本，接口返回报错。</p><h3 id="解决方法："><a href="#解决方法：" class="headerlink" title="解决方法："></a>解决方法：</h3><p>只要appstoreconnect上面有一个版本，就不会报错，解决方法很简单，第一次使用的时候，注销掉latest_testflight_build_number代码，使用配置好的buildnumber即可。</p><!-- rebuild by neat -->]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;!-- build time:Sat Feb 16 2019 15:09:23 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;1-打包&quot;&gt;&lt;a href=&quot;#1-打包&quot; class=&quot;headerlink&quot; title=&quot;1.打包&quot;&gt;&lt;/a&gt;1.打包&lt;/h1&gt;
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>8.工具资源网站整理</title>
+    <link href="https://zify.github.io/2018/12/19/8.%E5%B7%A5%E5%85%B7%E8%B5%84%E6%BA%90%E7%BD%91%E7%AB%99%E6%95%B4%E7%90%86/"/>
+    <id>https://zify.github.io/2018/12/19/8.工具资源网站整理/</id>
+    <published>2018-12-19T01:21:51.058Z</published>
+    <updated>2019-02-16T02:36:09.641Z</updated>
+    
+    <content type="html"><![CDATA[<!-- build time:Sat Feb 16 2019 15:09:23 GMT+0800 (GMT+08:00) --><h1 id="工具资源网站整理"><a href="#工具资源网站整理" class="headerlink" title="工具资源网站整理"></a>工具资源网站整理</h1><h2 id="论坛"><a href="#论坛" class="headerlink" title="论坛"></a>论坛</h2><ol><li>掘金 <a href="https://e.xitu.io/" target="_blank" rel="noopener">https://e.xitu.io/</a></li><li>掘金小册 <a href="https://juejin.im/book/5ad19f07518825364001dd49/section/5ad19f076fb9a028c42ea1d5" target="_blank" rel="noopener">https://juejin.im/book/5ad19f07518825364001dd49/section/5ad19f076fb9a028c42ea1d5</a></li><li>掘金 <a href="https://juejin.im/timeline" target="_blank" rel="noopener">https://juejin.im/timeline</a></li></ol><h2 id="网络服务"><a href="#网络服务" class="headerlink" title="网络服务"></a>网络服务</h2><ol><li><h2 id="语言开发"><a href="#语言开发" class="headerlink" title="语言开发"></a>语言开发</h2></li></ol><h2 id="辅助工具"><a href="#辅助工具" class="headerlink" title="辅助工具"></a>辅助工具</h2><h2 id="美工"><a href="#美工" class="headerlink" title="美工"></a>美工</h2><ol><li>墨刀-原型工具 <a href="https://modao.cc/" target="_blank" rel="noopener">https://modao.cc/</a></li><li>图标库 <a href="https://www.iconfont.cn" target="_blank" rel="noopener">https://www.iconfont.cn</a></li><li></li></ol><!-- rebuild by neat -->]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;!-- build time:Sat Feb 16 2019 15:09:23 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;工具资源网站整理&quot;&gt;&lt;a href=&quot;#工具资源网站整理&quot; class=&quot;headerlink&quot; title=&quot;工具资源网站整理&quot;&gt;&lt;
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>7.HexoNext样式整理</title>
+    <link href="https://zify.github.io/2018/12/07/7.HexoNext%E6%A0%B7%E5%BC%8F%E6%95%B4%E7%90%86/"/>
+    <id>https://zify.github.io/2018/12/07/7.HexoNext样式整理/</id>
+    <published>2018-12-07T10:01:35.000Z</published>
+    <updated>2019-02-16T02:48:50.747Z</updated>
+    
+    <content type="html"><![CDATA[<!-- build time:Sat Feb 16 2019 15:09:23 GMT+0800 (GMT+08:00) --><blockquote><p>本文整理了使用的Hexo-Next主题的实用自定义样式。</p></blockquote><a id="more"></a><h1 id="github-banner"><a href="#github-banner" class="headerlink" title="github banner"></a>github banner</h1><p><a href="http://tholman.com/github-corners/" target="_blank" rel="noopener">http://tholman.com/github-corners/</a></p><p>选择你喜欢的样式，然后找到, /themes/next/layout/_third-party/github-banner.swig, 替换里面的svg就可以了。</p><p><img src="/2018/12/07/7.HexoNext样式整理/next-github-banner-style.png" alt="next-github-banner-style.png"></p><p>如果只是颜色修改，找到 /themes/next/_config.yml:android_chrome_color 直接改就好了</p><h1 id="鼠标点击特性"><a href="#鼠标点击特性" class="headerlink" title="鼠标点击特性"></a>鼠标点击特性</h1><p><a href="https://blog.csdn.net/qq_33699981/article/details/72716951" target="_blank" rel="noopener">https://blog.csdn.net/qq_33699981/article/details/72716951</a></p><!-- rebuild by neat -->]]></content>
+    
+    <summary type="html">
+    
+      &lt;!-- build time:Sat Feb 16 2019 15:09:23 GMT+0800 (GMT+08:00) --&gt;&lt;blockquote&gt;&lt;p&gt;本文整理了使用的Hexo-Next主题的实用自定义样式。&lt;/p&gt;&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Hexo" scheme="https://zify.github.io/categories/Hexo/"/>
+    
+    
+      <category term="Hexo" scheme="https://zify.github.io/tags/Hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>6.Jenkens CI iOS Project</title>
+    <link href="https://zify.github.io/2018/12/07/6.Jenkens%20CI%20iOS%20Project/"/>
+    <id>https://zify.github.io/2018/12/07/6.Jenkens CI iOS Project/</id>
+    <published>2018-12-07T10:01:35.000Z</published>
+    <updated>2019-02-16T02:32:06.265Z</updated>
+    
+    <content type="html"><![CDATA[<!-- build time:Sat Feb 16 2019 15:09:23 GMT+0800 (GMT+08:00) --><blockquote><p>使用jenkins来持续集成iOP project</p></blockquote><a id="more"></a><h2 id="AppStore"><a href="#AppStore" class="headerlink" title="AppStore"></a>AppStore</h2><ol><li>loginkeychains配置</li></ol><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$&#123;KEYCHAIN_PATH&#125; $&#123;KEYCHAIN_PASSWORD&#125; $&#123;CODE_SIGNING_IDENTITY&#125;</span><br></pre></td></tr></table></figure><p>loginkeychains.png</p><ol start="2"><li>编译准备</li></ol><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">cd YUNDADA</span><br><span class="line">sh ../scripts/AsignBuildNumber.sh line $&#123;BUILD_NUM&#125;</span><br><span class="line">pod install --verbose</span><br><span class="line"></span><br><span class="line">if [ -f &quot;$&#123;WORKSPACE&#125;/scripts/copyFiles.sh&quot; ];then</span><br><span class="line">   sh $&#123;WORKSPACE&#125;/scripts/copyFiles.sh</span><br><span class="line">else</span><br><span class="line">   echo &quot;文件不存在&quot;</span><br><span class="line">fi</span><br></pre></td></tr></table></figure><ol start="3"><li>xcode配置<br>xcode_1<br>xcode_2<br>xcode_3<br>xcode_4</li></ol><p>4.上传到appstore</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">python upload.py SHIPPER REL 1.1.0 1 ./build/YUNDADA-Shipper.ipa</span><br><span class="line"></span><br><span class="line">python upload.py EXPRESS REL 1.1.0 1 ./build/YUNDADA-Line.ipa</span><br></pre></td></tr></table></figure><h2 id="上传appStore"><a href="#上传appStore" class="headerlink" title="上传appStore"></a>上传appStore</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">IPA_PATH=&quot;$&#123;WORKSPACE&#125;/build/YUNDADA-Line.ipa&quot;</span><br><span class="line">altoolPath=&quot;/Applications/Xcode.app/Contents/Applications/Application Loader.app/Contents/Frameworks/ITunesSoftwareService.framework/Versions/A/Support/altool&quot;</span><br><span class="line">&quot;$&#123;altoolPath&#125;&quot; --validate-app -f &quot;$&#123;IPA_PATH&#125;&quot; -u transda56@aliyun.com -p ofnc-vnyh-gdig-izka -t ios --output-format xml</span><br><span class="line">&quot;$&#123;altoolPath&#125;&quot; --upload-app -f &quot;$&#123;IPA_PATH&#125;&quot; -u transda56@aliyun.com -p ofnc-vnyh-gdig-izka -t ios --output-format xml</span><br></pre></td></tr></table></figure><p>5.通知到钉钉<br>dingding.png</p><!-- rebuild by neat -->]]></content>
+    
+    <summary type="html">
+    
+      &lt;!-- build time:Sat Feb 16 2019 15:09:23 GMT+0800 (GMT+08:00) --&gt;&lt;blockquote&gt;&lt;p&gt;使用jenkins来持续集成iOP project&lt;/p&gt;&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Jenkens" scheme="https://zify.github.io/categories/Jenkens/"/>
+    
+    
+      <category term="iOS" scheme="https://zify.github.io/tags/iOS/"/>
+    
+      <category term="Jenkens" scheme="https://zify.github.io/tags/Jenkens/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>5.travis CI自动部署Hexo</title>
+    <link href="https://zify.github.io/2018/12/07/5.travis-CI%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2Hexo/"/>
+    <id>https://zify.github.io/2018/12/07/5.travis-CI自动部署Hexo/</id>
+    <published>2018-12-07T09:03:08.000Z</published>
+    <updated>2019-02-16T02:35:37.762Z</updated>
+    
+    <content type="html"><![CDATA[<!-- build time:Sat Feb 16 2019 15:09:23 GMT+0800 (GMT+08:00) --><blockquote><p>本文基于travis CI自动部署Hexo到github page</p></blockquote><a id="more"></a><h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>前面已经介绍了如何使用Hexo配合github page搭建自己的blog。<br>你会发现每次需要发布一篇新的文章至少需要两步：</p><ul><li>提交代码到hexo源码库</li><li>发布到github.io仓库</li></ul><p>虽然已经很简单了，但是还有没有办法减少工作量?<br>答案是：有！就是今天要讲的。</p><p>解决的问题是：完成第一步：提交代码到hexo源码库，利用持续集成构建工具自动发布。</p><h2 id="持续集成：continue-Integration"><a href="#持续集成：continue-Integration" class="headerlink" title="持续集成：continue Integration."></a>持续集成：continue Integration.</h2><p>有工具：jenkins， travis CI等</p><h2 id="travis-CI"><a href="#travis-CI" class="headerlink" title="travis CI"></a>travis CI</h2><p>travis CI的优缺点就不用讲了，主要是github和它配合起来，很容易。<br>参考下面2位先驱的文章基本可以搞定，但年代有点久了，travis CI也已经更新了，我就罗列下我遇到的问题。</p><p><a href="https://blog.csdn.net/qinyuanpei/article/details/79388983" target="_blank" rel="noopener">基于Travis CI实现 Hexo 在 Github 和 Coding 的同步部署</a></p><p><a href="https://blog.csdn.net/woblog/article/details/51319364" target="_blank" rel="noopener">手把手教你使用Travis CI自动部署你的Hexo博客到Github上</a></p><h3 id="1-登录travis-ci"><a href="#1-登录travis-ci" class="headerlink" title="1.登录travis-ci"></a>1.登录travis-ci</h3><p>使用github账号登录<a href="https://www.travis-ci.org/" target="_blank" rel="noopener">https://www.travis-ci.org/</a></p><p>我发现还有这个网站<a href="https://travis-ci.com/" target="_blank" rel="noopener">https://travis-ci.com/</a>有兴趣的可以试试</p><h3 id="2-选择你的项目设置"><a href="#2-选择你的项目设置" class="headerlink" title="2.选择你的项目设置"></a>2.选择你的项目设置</h3><p><img src="/2018/12/07/5.travis-CI自动部署Hexo/travis-ci-setting-open.png" alt="travis-ci-setting-open.png"></p><p>前往<a href="https://github.com/settings/tokens/new" target="_blank" rel="noopener">https://github.com/settings/tokens/new</a>生成一个Personal access token</p><p><img src="/2018/12/07/5.travis-CI自动部署Hexo/new-personal-access-token.png" alt="new-personal-access-token.png"></p><p><img src="/2018/12/07/5.travis-CI自动部署Hexo/person-access-token.png" alt="person-access-token.png"><br>请记住这个token，退出这个页面就没了，下个页面要用</p><p><img src="/2018/12/07/5.travis-CI自动部署Hexo/travis-ci-setting-token.png" alt="travis-ci-setting-token.png"></p><p>token_name随便起一个，value用刚刚生成的token，然后点击add按钮.</p><p>这个token_name会在.travis.yml脚本中用到</p><h3 id="2-设置脚本-travis-yml"><a href="#2-设置脚本-travis-yml" class="headerlink" title="2.设置脚本.travis.yml"></a>2.设置脚本.travis.yml</h3><p>在你的源代码分支下面添加.travis.yml</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">language: node_js</span><br><span class="line">node_js: stable</span><br><span class="line"></span><br><span class="line"># S: Build Lifecycle</span><br><span class="line">install:</span><br><span class="line">  - npm install</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#before_script:</span><br><span class="line"> # - npm install -g gulp</span><br><span class="line">before_script:</span><br><span class="line">  - git submodule add https://github.com/ZiFy/hexo-theme-next.git themes/next</span><br><span class="line">  - git submodule update --init --recursive</span><br><span class="line"></span><br><span class="line">script:</span><br><span class="line">  - hexo g</span><br><span class="line">  # - hexo d</span><br><span class="line"># hexo d 使用这个脚本回报错误，主要是提交代码用户权限问题。所以有了下面after_script</span><br><span class="line"></span><br><span class="line">after_script:</span><br><span class="line">  - cd ./public</span><br><span class="line">  - git init</span><br><span class="line">  - git config user.name &quot;zify&quot;</span><br><span class="line">  - git config user.email &quot;zhaol2014@foxmail.com&quot;</span><br><span class="line">  - git add .</span><br><span class="line">  - git commit -m &quot;Update docs&quot;</span><br><span class="line">  - git push --force --quiet &quot;https://$&#123;access_token&#125;@$&#123;GH_REF&#125;&quot; master:master</span><br><span class="line"># E: Build LifeCycle</span><br><span class="line"></span><br><span class="line">branches:</span><br><span class="line">  only:</span><br><span class="line">    - develop</span><br><span class="line">env:</span><br><span class="line"> global:</span><br><span class="line">   - GH_REF: github.com/ZiFy/ZiFy.github.io.git</span><br></pre></td></tr></table></figure><ul><li>access_token: 在网站配置页面添加的环境变量</li><li>GH_REF: hexo源代码仓库</li><li>develop: 是要执行命令的分支</li></ul><h3 id="提交-travis-yml"><a href="#提交-travis-yml" class="headerlink" title="提交.travis.yml"></a>提交.travis.yml</h3><p>每一次提交，都会出发travis的任务检查，检查通过，则会执行任务。</p><h4 id="travis原理"><a href="#travis原理" class="headerlink" title="travis原理"></a>travis原理</h4><ol><li>监听commint提交</li><li>检查是否包含.travis.yml</li><li>检查.travis.yml的语法</li><li>执行任务</li></ol><h3 id="执行任务。"><a href="#执行任务。" class="headerlink" title="执行任务。"></a>执行任务。</h3><p><img src="/2018/12/07/5.travis-CI自动部署Hexo/travis-ci-branch.png" alt="travis-ci-branch.png"></p><h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>时间：2018-12-7<br>Hexo：3.8</p><!-- rebuild by neat -->]]></content>
+    
+    <summary type="html">
+    
+      &lt;!-- build time:Sat Feb 16 2019 15:09:23 GMT+0800 (GMT+08:00) --&gt;&lt;blockquote&gt;&lt;p&gt;本文基于travis CI自动部署Hexo到github page&lt;/p&gt;&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+      <category term="Hexo" scheme="https://zify.github.io/tags/Hexo/"/>
+    
+      <category term="travis CI" scheme="https://zify.github.io/tags/travis-CI/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>4.程序员装逼指南之Blog</title>
+    <link href="https://zify.github.io/2018/12/05/4.%E7%A8%8B%E5%BA%8F%E5%91%98%E8%A3%85%E9%80%BC%E6%8C%87%E5%8D%97%E4%B9%8BBlog/"/>
+    <id>https://zify.github.io/2018/12/05/4.程序员装逼指南之Blog/</id>
+    <published>2018-12-05T07:19:00.000Z</published>
+    <updated>2019-02-16T02:35:21.972Z</updated>
+    
+    <content type="html"><![CDATA[<!-- build time:Sat Feb 16 2019 15:09:23 GMT+0800 (GMT+08:00) --><a id="more"></a><h2 id="GitHub-Pages"><a href="#GitHub-Pages" class="headerlink" title="GitHub Pages"></a>GitHub Pages</h2><p><a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a></p><h2 id="hexo"><a href="#hexo" class="headerlink" title="hexo"></a>hexo</h2><h3 id="教程"><a href="#教程" class="headerlink" title="教程"></a>教程</h3><h3 id="以下几点特别说明一下"><a href="#以下几点特别说明一下" class="headerlink" title="以下几点特别说明一下"></a>以下几点特别说明一下</h3><h4 id="使用hexo-deploy发布"><a href="#使用hexo-deploy发布" class="headerlink" title="使用hexo deploy发布"></a>使用hexo deploy发布</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># _config.yml</span><br><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: https://github.com/ZiFy/ZiFy.github.io.git</span><br><span class="line">  branch: master</span><br><span class="line">  message: &quot;hexo自动发布&quot;</span><br></pre></td></tr></table></figure><p>特别提醒：<br>这个命令会把你的文件都删了，只保留发布的文件。<br>所以，请一定要选择另一个分支开发，这样才能把markdown文件保留下来。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">一键发布测试</span><br><span class="line">$ hexo g&amp;&amp;hexo s</span><br><span class="line">一键发布命令</span><br><span class="line">$ hexo g&amp;&amp;hexo d</span><br></pre></td></tr></table></figure><h4 id="使用CI自动发布"><a href="#使用CI自动发布" class="headerlink" title="使用CI自动发布"></a>使用CI自动发布</h4><h4 id="markdown支持本地图片"><a href="#markdown支持本地图片" class="headerlink" title="markdown支持本地图片"></a>markdown支持本地图片</h4><p><a href="https://blog.csdn.net/sugar_rainbow/article/details/57415705" target="_blank" rel="noopener">使用hexo-asset-image</a></p><h2 id="Next"><a href="#Next" class="headerlink" title="Next"></a>Next</h2><p>next 是一款了不起的hexo主题，支持很多功能。最重要是风格适合程序员。 [你是我的眼，眼里只有黑白色]</p><p><a href="https://theme-next.org/docs/theme-settings/" target="_blank" rel="noopener">hexo-theme-next</a></p><p><img src="/2018/12/05/4.程序员装逼指南之Blog/./hexo-theme-next-github.png" alt="hexo-theme-next-github"></p><h3 id="可以添加的功能"><a href="#可以添加的功能" class="headerlink" title="可以添加的功能"></a>可以添加的功能</h3><p><a href="http://theme-next.iissnan.com/third-party-services.html#comment-system" target="_blank" rel="noopener">Next第三方服务集成</a></p><h4 id="评论-Gitalk"><a href="#评论-Gitalk" class="headerlink" title="评论 Gitalk"></a>评论 Gitalk</h4><p><a href="https://github.com/settings/developers" target="_blank" rel="noopener">github OAuth Apps</a></p><p><a href="https://sariay.github.io/2018/11/18/Annie%E4%B8%BB%E9%A2%98%E4%BD%BF%E7%94%A8Gitalk/" target="_blank" rel="noopener">Annie主题使用Gitalk</a></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># /theme/next/_config.yml</span><br><span class="line">gitalk:</span><br><span class="line">  enable: true</span><br><span class="line">  github_id: Zify # Github repo   owner</span><br><span class="line">  repo: blog_comment_repo # Repository name to store issues.</span><br><span class="line">  client_id: c30a8xxxx # Github Application Client ID</span><br><span class="line">  client_secret: 916ce8fxx # Github Application Client Secret</span><br><span class="line">  admin_user: Zify # GitHub repo owner and collaborators, only these guys can initialize github issues</span><br><span class="line">  distraction_free_mode: true # Facebook-like distraction free mode</span><br></pre></td></tr></table></figure><h5 id="未找到相关的-Issues-进行评论"><a href="#未找到相关的-Issues-进行评论" class="headerlink" title="未找到相关的 Issues 进行评论"></a>未找到相关的 Issues 进行评论</h5><p>使用自己的账号登录一下，打开页面就会自动初始化。<br><img src="/2018/12/05/4.程序员装逼指南之Blog/gitalk-comment.png" alt="gitalk-comment"></p><h4 id="Baidu-analytics"><a href="#Baidu-analytics" class="headerlink" title="Baidu analytics"></a>Baidu analytics</h4><p><a href="https://tongji.baidu.com/" target="_blank" rel="noopener">https://tongji.baidu.com/</a></p><h4 id="google-analytics"><a href="#google-analytics" class="headerlink" title="google analytics"></a>google analytics</h4><p><a href="https://analytics.google.com/" target="_blank" rel="noopener">https://analytics.google.com/</a></p><h4 id="使用busuanzi统计阅读次数"><a href="#使用busuanzi统计阅读次数" class="headerlink" title="使用busuanzi统计阅读次数"></a>使用busuanzi统计阅读次数</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">busuanzi_count:</span><br><span class="line">  enable: true</span><br><span class="line">  total_visitors: true</span><br><span class="line">  total_visitors_icon: user</span><br><span class="line">  total_views: true</span><br><span class="line">  total_views_icon: eye</span><br><span class="line">  post_views: true</span><br><span class="line">  post_views_icon: eye</span><br></pre></td></tr></table></figure><h4 id="RSS"><a href="#RSS" class="headerlink" title="RSS"></a>RSS</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install --save hexo-generator-feed</span><br></pre></td></tr></table></figure><p><a href="https://www.jianshu.com/p/264024768d03" target="_blank" rel="noopener">next配置RSS</a></p><h4 id="标签页面，分类页面"><a href="#标签页面，分类页面" class="headerlink" title="标签页面，分类页面"></a>标签页面，分类页面</h4><p><a href="https://blog.csdn.net/qq_32337109/article/details/78755662" target="_blank" rel="noopener">hexo 创建文章、标签、分类</a></p><h4 id="页面-阅读排行"><a href="#页面-阅读排行" class="headerlink" title="页面-阅读排行"></a>页面-阅读排行</h4><p><a href="https://hoxis.github.io/hexo-next-read-rank.html" target="_blank" rel="noopener">hexo page 阅读排行</a></p><h4 id="next自定义样式"><a href="#next自定义样式" class="headerlink" title="next自定义样式"></a>next自定义样式</h4><p><a href="https://www.jianshu.com/p/37769040891f" target="_blank" rel="noopener">hexo-theme-next主题设置</a></p><p><a href="https://www.jianshu.com/p/9f0e90cc32c2" target="_blank" rel="noopener">Hexo-NexT配置超炫网页效果</a></p><h2 id="hexo-admin发布平台"><a href="#hexo-admin发布平台" class="headerlink" title="hexo-admin发布平台"></a>hexo-admin发布平台</h2><p>（不重要，hexo3.8, hexo-admin2.3.0下存在bug）</p><p><a href="https://jaredforsyth.com/hexo-admin/" target="_blank" rel="noopener">hexo-admin</a></p><p><a href="https://albenw.github.io/posts/4ffa5bc6/" target="_blank" rel="noopener">那个人的hexo-admin教程</a></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm install --save hexo-admin</span><br><span class="line">hexo server -d</span><br><span class="line">open http://localhost:4000/admin/</span><br></pre></td></tr></table></figure><h2 id="SEO优化"><a href="#SEO优化" class="headerlink" title="SEO优化"></a>SEO优化</h2><p><a href="https://hoxis.github.io/Hexo+Next%20SEO%E4%BC%98%E5%8C%96.html" target="_blank" rel="noopener">Hexo博客Next主题SEO优化方法</a></p><h2 id="Hexo博客压缩优化"><a href="#Hexo博客压缩优化" class="headerlink" title="Hexo博客压缩优化"></a>Hexo博客压缩优化</h2><p>Hexo博客生成的静态文件存在大量空白，不仅难看，而且在一定程度上影响用户网页加载，需要对js和css进行压缩。</p><h3 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-neat --save</span><br></pre></td></tr></table></figure><h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><p>在站点配置增加如下属性，可以选择是否压缩HTML、CSS、Js文件，均有相应的开关选项。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"># hexo-neat</span><br><span class="line"></span><br><span class="line">neat_enable: true</span><br><span class="line"></span><br><span class="line">neat_html:</span><br><span class="line">  enable: true</span><br><span class="line">  exclude:</span><br><span class="line"></span><br><span class="line">neat_css:</span><br><span class="line">  enable: true</span><br><span class="line">  exclude:</span><br><span class="line">    - &apos;*.min.css&apos;</span><br><span class="line"></span><br><span class="line">neat_js:</span><br><span class="line">  enable: true</span><br><span class="line">  mangle: true</span><br><span class="line">  output:</span><br><span class="line">  compress:</span><br><span class="line">  exclude:</span><br><span class="line">    - &apos;*.min.js&apos;</span><br></pre></td></tr></table></figure><!-- rebuild by neat -->]]></content>
+    
+    <summary type="html">
+    
+      &lt;!-- build time:Sat Feb 16 2019 15:09:23 GMT+0800 (GMT+08:00) --&gt;
+    
+    </summary>
+    
+      <category term="Hexo" scheme="https://zify.github.io/categories/Hexo/"/>
+    
+    
+      <category term="Hexo" scheme="https://zify.github.io/tags/Hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>3.我的Hexo使用教程</title>
+    <link href="https://zify.github.io/2018/12/04/3.%E6%88%91%E7%9A%84Hexo%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/"/>
+    <id>https://zify.github.io/2018/12/04/3.我的Hexo使用教程/</id>
+    <published>2018-12-04T10:01:35.000Z</published>
+    <updated>2019-02-16T02:35:03.883Z</updated>
+    
+    <content type="html"><![CDATA[<!-- build time:Sat Feb 16 2019 15:09:23 GMT+0800 (GMT+08:00) --><p>使用Hexo搭建博客</p><a id="more"></a><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br><span class="line">简写</span><br><span class="line">$ hexo s</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br><span class="line">简写</span><br><span class="line">$ hexo g</span><br></pre></td></tr></table></figure><p>或者</p><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br><span class="line">简写</span><br><span class="line">$ hexo d</span><br></pre></td></tr></table></figure><h3 id="clean"><a href="#clean" class="headerlink" title="clean"></a>clean</h3><p>小心使用清理命令，会把post目录下面的文件都清理掉</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p><h3 id="快捷命令："><a href="#快捷命令：" class="headerlink" title="快捷命令："></a>快捷命令：</h3><p>测试：<br></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g &amp;&amp; hexo s</span><br></pre></td></tr></table></figure><p></p><p>发布：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure><h2 id="安装主题"><a href="#安装主题" class="headerlink" title="安装主题"></a>安装主题</h2><p>资源网站 <a href="https://hexo.io/themes/" target="_blank" rel="noopener">https://hexo.io/themes/</a></p><h3 id="下载主题"><a href="#下载主题" class="headerlink" title="下载主题"></a>下载主题</h3><p>下载主题到themes 目录下。有2种主流方式。</p><h4 id="git-clone"><a href="#git-clone" class="headerlink" title="git clone"></a>git clone</h4><p>可以直接 clone 到 themes 目录下，优点是如果对主题有调整需求可以同时提交到 git 控制中。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> https://github.com/olOwOlo/hugo-theme-even themes/even</span><br></pre></td></tr></table></figure><h4 id="git-submodule"><a href="#git-submodule" class="headerlink" title="git submodule"></a>git submodule</h4><p>也可以添加到 git 的 submodule 中，优点是后面讲到用 travis 自动部署时比较方便。如果需要对主题做更改，最好 fork 主题再做改动。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git submodule add https://github.com/olOwOlo/hugo-theme-even.git themes/even</span><br><span class="line"></span><br><span class="line">git submodule add https://github.com/ZiFy/hexo-theme-next.git themes/next</span><br></pre></td></tr></table></figure><h3 id="配置安装"><a href="#配置安装" class="headerlink" title="配置安装"></a>配置安装</h3><p>到根目录下找到配置文件_config.yml -&gt; theme: landscape</p><p>theme: 主题key<br>landscape: 对应themes目录下的文件夹名</p><h2 id="使用travis-CI自动部署"><a href="#使用travis-CI自动部署" class="headerlink" title="使用travis CI自动部署"></a>使用travis CI自动部署</h2><h2 id="THANKS"><a href="#THANKS" class="headerlink" title="THANKS"></a>THANKS</h2><p><a href="https://www.cnblogs.com/visugar/p/6821777.html" target="_blank" rel="noopener">hexo从零开始到搭建完整</a></p><p><a href="https://www.jianshu.com/p/4eaddcbe4d12" target="_blank" rel="noopener">5分钟 搭建免费个人博客</a></p><!-- rebuild by neat -->]]></content>
+    
+    <summary type="html">
+    
+      &lt;!-- build time:Sat Feb 16 2019 15:09:23 GMT+0800 (GMT+08:00) --&gt;&lt;p&gt;使用Hexo搭建博客&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Hexo" scheme="https://zify.github.io/categories/Hexo/"/>
+    
+    
+      <category term="Hexo" scheme="https://zify.github.io/tags/Hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2.sonarQube 分析Objective-C</title>
+    <link href="https://zify.github.io/2018/12/03/2.sonarQube%20%E5%88%86%E6%9E%90Objective-C/"/>
+    <id>https://zify.github.io/2018/12/03/2.sonarQube 分析Objective-C/</id>
+    <published>2018-12-03T10:01:35.000Z</published>
+    <updated>2019-02-16T02:34:46.598Z</updated>
+    
+    <content type="html"><![CDATA[<!-- build time:Sat Feb 16 2019 15:09:23 GMT+0800 (GMT+08:00) --><blockquote><p>使用sonarQube分析Objective-C</p></blockquote><a id="more"></a><h1 id="sonarQube-分析Objective-C"><a href="#sonarQube-分析Objective-C" class="headerlink" title="sonarQube 分析Objective-C"></a>sonarQube 分析Objective-C</h1><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><h3 id="安装homebrew"><a href="#安装homebrew" class="headerlink" title="安装homebrew"></a>安装homebrew</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;</span><br></pre></td></tr></table></figure><h3 id="安装mysql"><a href="#安装mysql" class="headerlink" title="安装mysql"></a>安装mysql</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install mysql</span><br></pre></td></tr></table></figure><h4 id="mysql-配置教程"><a href="#mysql-配置教程" class="headerlink" title="mysql 配置教程:"></a>mysql 配置教程:</h4><p><a href="https://www.jianshu.com/p/4cb5ef29a099" target="_blank" rel="noopener">https://www.jianshu.com/p/4cb5ef29a099</a></p><h3 id="安装Java"><a href="#安装Java" class="headerlink" title="安装Java"></a>安装Java</h3><p>安装java ：<br><a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html" target="_blank" rel="noopener">http://www.oracle.com/technetwork/java/javase/downloads/index.html</a></p><h3 id="安装sonarQube"><a href="#安装sonarQube" class="headerlink" title="安装sonarQube"></a>安装sonarQube</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install sonarqube</span><br></pre></td></tr></table></figure><p>也可以自己到官网下载<a href="http://www.sonarqube.org/downloads/" target="_blank" rel="noopener">http://www.sonarqube.org/downloads/</a></p><p>解压后移到/usr/local<br>我的目录<br></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/local/sonarqube-6.7.5</span><br></pre></td></tr></table></figure><p></p><h3 id="安装xcpretty"><a href="#安装xcpretty" class="headerlink" title="安装xcpretty"></a>安装xcpretty</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gem install xcpretty</span><br></pre></td></tr></table></figure><h3 id="安装OCLint"><a href="#安装OCLint" class="headerlink" title="安装OCLint"></a>安装OCLint</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">brew tap oclint/formulae</span><br><span class="line">brew install oclint</span><br></pre></td></tr></table></figure><h3 id="安装sonar-scanner"><a href="#安装sonar-scanner" class="headerlink" title="安装sonar-scanner"></a>安装sonar-scanner</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install sonar-scanner</span><br></pre></td></tr></table></figure><h3 id="安装gcovr"><a href="#安装gcovr" class="headerlink" title="安装gcovr"></a>安装gcovr</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install gcovr</span><br></pre></td></tr></table></figure><h3 id="安装sonar-objective-c-plugin"><a href="#安装sonar-objective-c-plugin" class="headerlink" title="安装sonar-objective-c-plugin"></a>安装sonar-objective-c-plugin</h3><p>配置<br>sonarqube的配置文件conf/sonar.properties</p><p>配置sonar连接mysql<br>// 注： 我配置mysql重启服务，链接不上。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">// 配置sonar连接mysql</span><br><span class="line">sonar.jdbc.url=jdbc:mysql://localhost:3306/sonar?useUnicode=true&amp;characterEncoding=utf8&amp;rewriteBatchedStatements=true&amp;useConfigs=maxPerformance&amp;useSSL=false</span><br><span class="line">sonar.jdbc.username=root</span><br><span class="line">sonar.jdbc.password=root</span><br><span class="line"></span><br><span class="line">// 其他</span><br><span class="line">sonar.sorceEncoding=UTF-8</span><br><span class="line">sonar.login=admin</span><br><span class="line">sonar.password=admin</span><br><span class="line"></span><br><span class="line">运行</span><br><span class="line">支持的命令有： start/restart/stop/status</span><br><span class="line">sudo /usr/local/sonar/bin/macosx-universal-64/sonar.sh start</span><br></pre></td></tr></table></figure><h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><h3 id="安装sonarQube汉化包"><a href="#安装sonarQube汉化包" class="headerlink" title="安装sonarQube汉化包"></a>安装sonarQube汉化包</h3><p><a href="https://github.com/SonarQubeCommunity/sonar-l10n-zh/releases/latest" target="_blank" rel="noopener">https://github.com/SonarQubeCommunity/sonar-l10n-zh/releases/latest</a><br>找到jar包，添加到extensions/plugins</p><p>我用的sonarQube6.5对应汉化包1.17</p><p>添加完成后，需要重启服务才能生效。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sonar restart</span><br><span class="line"></span><br><span class="line">sh bin/macosx-universal-64/sonar.sh start</span><br><span class="line">sh bin/macosx-universal-64/sonar.sh status</span><br><span class="line">sh bin/macosx-universal-64/sonar.sh restart</span><br></pre></td></tr></table></figure><!-- rebuild by neat -->]]></content>
+    
+    <summary type="html">
+    
+      &lt;!-- build time:Sat Feb 16 2019 15:09:23 GMT+0800 (GMT+08:00) --&gt;&lt;blockquote&gt;&lt;p&gt;使用sonarQube分析Objective-C&lt;/p&gt;&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="iOS" scheme="https://zify.github.io/categories/iOS/"/>
+    
+    
+      <category term="sonarQube" scheme="https://zify.github.io/tags/sonarQube/"/>
+    
+      <category term="Objective-C" scheme="https://zify.github.io/tags/Objective-C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>1.use rn by Cocoapods</title>
+    <link href="https://zify.github.io/2018/12/02/1.use%20rn%20by%20Cocoapods/"/>
+    <id>https://zify.github.io/2018/12/02/1.use rn by Cocoapods/</id>
+    <published>2018-12-02T10:01:35.000Z</published>
+    <updated>2019-02-16T02:34:11.968Z</updated>
+    
+    <content type="html"><![CDATA[<!-- build time:Sat Feb 16 2019 15:09:23 GMT+0800 (GMT+08:00) --><a id="more"></a><h1 id="use-rn-by-Cocoapods"><a href="#use-rn-by-Cocoapods" class="headerlink" title="use rn by Cocoapods"></a>use rn by Cocoapods</h1><p>配置信息<br>rn版本0.50.0</p><p>cocoapods:1.4</p><p>Podfile</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">platform :ios, &apos;8.0&apos;</span><br><span class="line"></span><br><span class="line">$rn_node_moudles_dir = &apos;../RN/node_modules&apos;</span><br><span class="line">$rn_react_pod_dir =  $rn_node_moudles_dir+&apos;/react-native&apos;</span><br><span class="line"></span><br><span class="line">def ymm_rn_debug_pod</span><br><span class="line">    # Your &apos;node_modules&apos; directory is probably in the root of your project,</span><br><span class="line">    # but if not, adjust the `:path` accordingly</span><br><span class="line">    pod &apos;React&apos;, :path =&gt; $rn_react_pod_dir, :subspecs =&gt; [</span><br><span class="line">    </span><br><span class="line">    &apos;BatchedBridge&apos;, #if RN &gt;= 0.43</span><br><span class="line">    #CxxBridge 代替 BatchedBridge</span><br><span class="line">    #&apos;CxxBridge&apos;,</span><br><span class="line"></span><br><span class="line">    &apos;Core&apos;,</span><br><span class="line">    &apos;DevSupport&apos;, # Include this to enable In-App Devmenu if RN &gt;= 0.43</span><br><span class="line">    &apos;RCTNetwork&apos;,</span><br><span class="line">    &apos;RCTWebSocket&apos;, # needed for debugging</span><br><span class="line">    &apos;RCTActionSheet&apos;,</span><br><span class="line">    &apos;RCTAnimation&apos;,</span><br><span class="line">    &apos;RCTImage&apos;,</span><br><span class="line">    &apos;RCTText&apos;,</span><br><span class="line"></span><br><span class="line">#    &apos;RCTActionSheet&apos;,</span><br><span class="line">#    &apos;RCTBlob&apos;,</span><br><span class="line">#    &apos;RCTSettings&apos;,</span><br><span class="line">#    &apos;RCTVibration&apos;,</span><br><span class="line">#    &apos;RCTLinkingIOS&apos;,</span><br><span class="line">#    &apos;RCTAnimation&apos;,</span><br><span class="line">#    &apos;RCTGeolocation&apos;,</span><br><span class="line">    # Add any other subspecs you want to use in your project</span><br><span class="line">    ]</span><br><span class="line">    # Explicitly include Yoga if you are using RN &gt;= 0.42.0</span><br><span class="line">    pod &apos;yoga&apos;, :path =&gt; $rn_react_pod_dir+&apos;/ReactCommon/yoga&apos;</span><br><span class="line"></span><br><span class="line">    # Third party deps podspec link</span><br><span class="line">    pod &apos;DoubleConversion&apos;, :podspec =&gt; $rn_react_pod_dir+&apos;/third-party-podspecs/DoubleConversion.podspec&apos;</span><br><span class="line">    pod &apos;GLog&apos;, :podspec =&gt; $rn_react_pod_dir+&apos;/third-party-podspecs/GLog.podspec&apos;</span><br><span class="line">    pod &apos;Folly&apos;, :podspec =&gt; $rn_react_pod_dir+&apos;/third-party-podspecs/Folly.podspec&apos;</span><br><span class="line"></span><br><span class="line">end</span><br></pre></td></tr></table></figure><h3 id="用CxxBridge替换BatchedBridge"><a href="#用CxxBridge替换BatchedBridge" class="headerlink" title="用CxxBridge替换BatchedBridge"></a>用CxxBridge替换BatchedBridge</h3><p>将podfile修改后，会出现问题</p><p><a href="https://github.com/facebook/react-native/issues/16381" target="_blank" rel="noopener">https://github.com/facebook/react-native/issues/16381</a></p><p><a href="https://github.com/facebook/react-native/pull/16664" target="_blank" rel="noopener">https://github.com/facebook/react-native/pull/16664</a></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">   s.subspec &quot;jschelpers&quot; do |ss|</span><br><span class="line">     ss.dependency             &quot;Folly&quot;, &quot;2016.09.26.00&quot;</span><br><span class="line">+    ss.dependency             &quot;React/PrivateDatabase&quot;</span><br><span class="line">     ss.compiler_flags       = folly_compiler_flags</span><br><span class="line">     ss.source_files         = &quot;ReactCommon/jschelpers/*.&#123;cpp,h&#125;&quot;</span><br><span class="line">     ss.private_header_files = &quot;ReactCommon/jschelpers/*.h&quot;</span><br><span class="line">     ss.pod_target_xcconfig  = &#123; &quot;HEADER_SEARCH_PATHS&quot; =&gt; &quot;\&quot;$(PODS_TARGET_SRCROOT)/ReactCommon\&quot;&quot; &#125;</span><br><span class="line">     ss.framework            = &quot;JavaScriptCore&quot;</span><br><span class="line">   end</span><br><span class="line"> </span><br><span class="line">+  s.subspec &quot;PrivateDatabase&quot; do |ss|</span><br><span class="line">+    ss.source_files         = &quot;ReactCommon/privatedata/*.&#123;cpp,h&#125;&quot;</span><br><span class="line">+    ss.private_header_files = &quot;ReactCommon/privatedata/*.h&quot;</span><br><span class="line">+  end</span><br><span class="line">+</span><br><span class="line">   s.subspec &quot;cxxreact&quot; do |ss|</span><br><span class="line">     ss.dependency             &quot;React/jschelpers&quot;</span><br><span class="line">     ss.dependency             &quot;boost&quot;</span><br></pre></td></tr></table></figure><!-- rebuild by neat -->]]></content>
+    
+    <summary type="html">
+    
+      &lt;!-- build time:Sat Feb 16 2019 15:09:23 GMT+0800 (GMT+08:00) --&gt;
+    
+    </summary>
+    
+      <category term="iOS" scheme="https://zify.github.io/categories/iOS/"/>
+    
+    
+      <category term="Cocoapods" scheme="https://zify.github.io/tags/Cocoapods/"/>
+    
+      <category term="ReactNative" scheme="https://zify.github.io/tags/ReactNative/"/>
+    
+  </entry>
+  
+</feed>
